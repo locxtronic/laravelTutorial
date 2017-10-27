@@ -54,7 +54,7 @@
  
 ### Access control ###
 
-1. Allow access to whole controller if authenticate, using constructor method.
+1. Allow access to whole controller if authenticate, using constructor method. <br>
 `function __construct() {
 	 $this->middleware('auth');
  }`
