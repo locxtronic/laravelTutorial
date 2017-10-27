@@ -1,4 +1,4 @@
-## Access control ##
+### Access control ###
 
 1. Allow access to whole controller if authenticate, using constructor method.
 `function __construct() {

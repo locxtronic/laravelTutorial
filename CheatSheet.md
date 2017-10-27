@@ -48,5 +48,25 @@
 `$row->columnName = value` <br>
 `$row->save();`<br>
 
+ 8. Deleting record <br>
+ `$row = ModelName::find($id);` <br>
+ `$row->delete();`<br>
  
+### Access control ###
+
+1. Allow access to whole controller if authenticate, using constructor method.
+`function __construct() {
+	 $this->middleware('auth');
+ }`
+	
+2. Limiting access for certain function;
+- Limiting access using route <br>
+`Route::get('route','controller@function')>middleware('auth');`
+- Limiting access in function for authenticated user <br>
+`function test() {` <br>
+`If (Auth::check()) {`<br>
+`// process `<br>
+} <br>
+}` <br>
+	
 
