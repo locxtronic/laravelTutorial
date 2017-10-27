@@ -66,7 +66,7 @@
 `function test() {` <br>
 `If (Auth::check()) {`<br>
 `// process `<br>
-'}' <br>
-'}' <br>
+`}` <br>
+`}` <br>
 	
 
