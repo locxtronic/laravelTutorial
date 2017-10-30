@@ -58,11 +58,11 @@
 `return view('viewName', $data);`
  
  10. Error solving for too long column name.
-	 11. Goto to folder `app>Providers.`
-	 11. Open file AppServiceProvider.php
-	 11. Under boot function, paste this code <br>
+	 1. Goto to folder `app>Providers.`
+	 2. Open file AppServiceProvider.php
+	 3. Under boot function, paste this code <br>
 	`schema::defaultStringLength(191);`
-	 11. make sure to <br>
+	 4. make sure to <br>
 	 `use Illuminate\Support\Facades\schema;`
 
 ### Access control ###
@@ -83,21 +83,21 @@
 `}` <br>
 	
 ### Blade ###
- 5. Echo variable in view <br>
+ 1. Echo variable in view <br>
 `{{ $var }}`
 
- 6. Echo full route URL to `<a>` or form `action` <br> and parse value to it. **Only works if route have name.**<br>
+ 2. Echo full route URL to `<a>` or form `action` <br> and parse value to it. **Only works if route have name.**<br>
 `{{ route('controller.function', $var) }}`
 
- 7. Echo the URL of route if the route does not have name. <br>
+ 3. Echo the URL of route if the route does not have name. <br>
   `{{ action('controller@function'); }}`
 
- 8. Showing pagination links <br>
+ 4. Showing pagination links <br>
 `{{ $model->links }}`
 
- 9. Re-display input value in textbox <br>
+ 5. Re-display input value in textbox <br>
  `value = "{{ old('elementName') }}"`
 
- 10. Displaying value to textbox from DB or previous inserted value <br>
+ 6. Displaying value to textbox from DB or previous inserted value <br>
  `value = "{{ $modelName->attribute or old('elementName') }}"`
 
