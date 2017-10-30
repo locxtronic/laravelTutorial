@@ -52,9 +52,9 @@
  `$row = ModelName::find($id);` <br>
  `$row->delete();`<br>
  
- 9. Generate pagination 
+ 9. Generate pagination <br>
 `$paginatedModel = ModelName::paginate(offsetValue);` <br>
-`$data = ['keyname' => $paginatedModel];`
+`$data = ['keyname' => $paginatedModel];`<br>
 `return view('viewName', $data);`
  
 ### Access control ###
@@ -78,7 +78,7 @@
  14. Echo variable in view <br>
 `{{ $var }}`
 
- 15. Echo full route URL to `<a>` or form `action` <br> and parse value to it.
+ 15. Echo full route URL to `<a>` or form `action` <br> and parse value to it.<br>
 `{{ route('controller.function', $var) }}`
 
  16. Showing pagination links <br>
