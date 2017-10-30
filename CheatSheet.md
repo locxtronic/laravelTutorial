@@ -1,4 +1,4 @@
-## Laravel Cheat Sheet ##
+## Laravel Ultimate Cheat Sheet ##
 ### Artisan Command ###
  1. Run php server <br>
  `php artisan serve`
@@ -57,17 +57,25 @@
 `$data = ['keyname' => $paginatedModel];`<br>
 `return view('viewName', $data);`
  
+ 10. Error solving for too long column name.
+	 11. Goto to folder `app>Providers.`
+	 11. Open file AppServiceProvider.php
+	 11. Under boot function, paste this code <br>
+	`schema::defaultStringLength(191);`
+	 11. make sure to <br>
+	 `use Illuminate\Support\Facades\schema;`
+
 ### Access control ###
 
- 10. Allow access to whole controller if authenticate, using constructor method. <br>
+ 1. Allow access to whole controller if authenticate, using constructor method. <br>
 `function __construct() {
 	 $this->middleware('auth');
  }`
 	
- 11. Limiting access for certain function;
- 12. Limiting access using route <br>
+ 2. Limiting access for certain function;
+ 3. Limiting access using route <br>
 `Route::get('route','controller@function')>middleware('auth');`
- 13. Limiting access in function for authenticated user <br>
+ 4. Limiting access in function for authenticated user <br>
 `function test() {` <br>
 `If (Auth::check()) {`<br>
 `// process `<br>
@@ -75,17 +83,21 @@
 `}` <br>
 	
 ### Blade ###
- 14. Echo variable in view <br>
+ 5. Echo variable in view <br>
 `{{ $var }}`
 
- 15. Echo full route URL to `<a>` or form `action` <br> and parse value to it.<br>
+ 6. Echo full route URL to `<a>` or form `action` <br> and parse value to it. **Only works if route have name.**<br>
 `{{ route('controller.function', $var) }}`
 
- 16. Showing pagination links <br>
+ 7. Echo the URL of route if the route does not have name. <br>
+  `{{ action('controller@function'); }}`
+
+ 8. Showing pagination links <br>
 `{{ $model->links }}`
 
- 17. Re-display input value in textbox <br>
+ 9. Re-display input value in textbox <br>
  `value = "{{ old('elementName') }}"`
 
- 18. Displaying value to textbox from DB or previous inserted value <br>
+ 10. Displaying value to textbox from DB or previous inserted value <br>
  `value = "{{ $modelName->attribute or old('elementName') }}"`
+
