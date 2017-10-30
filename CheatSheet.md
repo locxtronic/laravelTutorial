@@ -52,21 +52,40 @@
  `$row = ModelName::find($id);` <br>
  `$row->delete();`<br>
  
+ 9. Generate pagination 
+`$paginatedModel = ModelName::paginate(offsetValue);` <br>
+`$data = ['keyname' => $paginatedModel];`
+`return view('viewName', $data);`
+ 
 ### Access control ###
 
-1. Allow access to whole controller if authenticate, using constructor method. <br>
+ 10. Allow access to whole controller if authenticate, using constructor method. <br>
 `function __construct() {
 	 $this->middleware('auth');
  }`
 	
-2. Limiting access for certain function;
-- Limiting access using route <br>
+ 11. Limiting access for certain function;
+ 12. Limiting access using route <br>
 `Route::get('route','controller@function')>middleware('auth');`
-- Limiting access in function for authenticated user <br>
+ 13. Limiting access in function for authenticated user <br>
 `function test() {` <br>
 `If (Auth::check()) {`<br>
 `// process `<br>
 `}` <br>
 `}` <br>
 	
+### Blade ###
+ 14. Echo variable in view <br>
+`{{ $var }}`
 
+ 15. Echo full route URL to `<a>` or form `action` <br> and parse value to it.
+`{{ route('controller.function', $var) }}`
+
+ 16. Showing pagination links <br>
+`{{ $model->links }}`
+
+ 17. Re-display input value in textbox <br>
+ `value = "{{ old('elementName') }}"`
+
+ 18. Displaying value to textbox from DB or previous inserted value <br>
+ `value = "{{ $modelName->attribute or old('elementName') }}"`
